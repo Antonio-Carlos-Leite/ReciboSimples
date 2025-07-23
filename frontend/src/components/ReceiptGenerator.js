@@ -99,7 +99,8 @@ const ReceiptGenerator = () => {
       {/* Header */}
       <div className="text-center mb-4">
         <h2 className="font-bold text-lg mb-1">{data.companyName}</h2>
-        <p className="text-xs">RECIBO SIMPLIFICADO</p>
+        <p className="text-xs">"Este documento não é uma nota fiscal."
+              "Recibo simplificado - sem valor fiscal."</p>
         <p className="text-xs font-bold mt-2">{viaType}</p>
       </div>
       
