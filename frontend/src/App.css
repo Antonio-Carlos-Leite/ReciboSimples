@@ -32,3 +32,64 @@
         transform: rotate(360deg);
     }
 }
+
+/* Print styles for thermal printing simulation */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    
+    .print-receipt, .print-receipt * {
+        visibility: visible;
+    }
+    
+    .print-receipt {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        font-family: 'Courier New', monospace;
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    
+    @page {
+        size: 80mm auto;
+        margin: 0;
+    }
+}
+
+/* Custom scrollbar for receipt preview */
+.receipt-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.receipt-scroll::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.receipt-scroll::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.receipt-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Animation for receipt generation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.receipt-fade-in {
+    animation: fadeInUp 0.5s ease-out;
+}
